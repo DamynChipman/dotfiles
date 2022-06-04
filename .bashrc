@@ -65,29 +65,3 @@ alias ll='ls -l'
 alias sq='squeue'
 alias sb='sbatch'
 alias sr='srun'
-
-# Default Environment
-module load slurm gcc/8.2.0 mpich cmake blas lapack
-
-# Source Spack
-source ~/packages/spack/share/spack/setup-env.sh
-
-# Functions
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/bsuhome/dchipman/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/bsuhome/dchipman/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/bsuhome/dchipman/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/bsuhome/dchipman/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# Conda PATH
-export PATH=/bsuhome/dchipman/miniconda3/bin:$PATH
